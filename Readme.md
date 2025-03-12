@@ -1,7 +1,17 @@
-# MyProject
+# 🚀 NikStore(Ecommerce Website)
 
 ## Overview
-MyProject is a full-stack **eCommerce web application** built using **Angular** for the frontend and **.NET API** for the backend. The application allows users to browse products, manage carts, place orders, and features role-based authentication with **JWT** for security.
+NikStore is a full-stack **eCommerce web application** built using **Angular** for the frontend and **.NET API** for the backend. The application allows users to browse products, manage carts, place orders, and features role-based authentication with **JWT** for security.
+
+## 📸 Screenshots
+
+![Login Page](https://raw.githubusercontent.com/Nikhill-Bhardwajjj/NikStorre/images/Screenshot 2025-03-12 105346.png)
+
+## 🎥 Video Demo
+![Video Demo](https://raw.githubusercontent.com/Nikhill-Bhardwajjj/NikStore/main/images/EcommerceWeb-GoogleChrome2025-03-1211-03-19-ezgif.com-video-to-gif-converter.gif)
+
+
+
 
 ## Technologies Used
 ### Frontend (Angular)
