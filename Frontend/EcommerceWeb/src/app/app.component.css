@@ -1,0 +1,27 @@
+img {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+
+.absolute {
+  position: absolute;
+
+}
+
+.bg-white {
+  background-color: white;
+}
+
+.text-black {
+  color: black;
+}
+
+
+@media (max-width: 767px), (min-width: 768px) {
+    .absolute.top-16.right-0 {
+      right: 0 !important;
+      top: 4rem; /* Matches top-16 in Tailwind (~64px, header height) */
+    }
+  }

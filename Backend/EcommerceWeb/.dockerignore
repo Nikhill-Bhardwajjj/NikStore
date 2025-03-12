@@ -1,0 +1,21 @@
+# Ignore build output
+bin/
+obj/
+
+# Ignore Git-related files
+.git/
+.gitignore
+
+# Ignore documentation and other non-essential files
+*.md
+*.txt
+
+# Ignore publish folder (already published artifacts)
+publish/
+
+# Ignore user-specific files
+*.user
+*.http
+
+# Ignore Nixpacks and other configuration files
+.nixpacks.toml

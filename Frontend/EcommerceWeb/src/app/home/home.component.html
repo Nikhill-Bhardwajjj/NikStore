@@ -1,0 +1,170 @@
+
+
+<router-outlet></router-outlet>
+
+
+
+
+<body class=" min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 ">
+
+  <!-- Hero Section -->
+  <div class="relative bg-gradient-to-r from-violet-600 to-indigo-600 text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Discover Premium Products</h1>
+        <p class="text-lg text-violet-200 mb-8">Explore our curated collection of luxury items</p>
+      </div>
+    </div>
+   <!-- 
+
+    <div class="absolute bottom-0 left-0 right-0">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="w-full h-24">
+        <path fill="#ffffff" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+     
+      </svg>
+    </div>
+    
+   -->
+
+
+    <div class="">
+      <div class="flex flex-wrap gap-4 justify-center">
+      <button (click)="setCategory('All')" 
+        class="px-6 py-3 rounded-full text-sm text-white font-medium transition-all duration-300"
+        [ngClass]="{
+          'bg-gradient-to-r from-violet-600 to-indigo-600 text-white shadow-lg transform scale-105': selectedCategory === 'All',
+          'bg-white text-gray-600 hover:bg-violet-50 hover:text-violet-700': selectedCategory !== 'All'
+        }">
+        All
+      </button>
+      
+      <button (click)="setCategory('UpperWear')" 
+        class="px-6 py-3 rounded-full text-white  text-sm font-medium transition-all duration-300"
+        [ngClass]="{
+          'bg-gradient-to-r from-violet-600 to-indigo-600 text-white shadow-lg transform scale-105': selectedCategory === 'UpperWear',
+          'bg-white text-gray-600 hover:bg-violet-50 hover:text-violet-700': selectedCategory !== 'UpperWear'
+        }">
+        UpperWear
+      </button>
+  
+      <button (click)="setCategory('BottomWear')" 
+        class="px-6 py-3 rounded-full text-sm text-white font-medium transition-all duration-300"
+        [ngClass]="{
+          'bg-gradient-to-r from-violet-600 to-indigo-600 text-white shadow-lg transform scale-105': selectedCategory === 'BottomWear',
+          'bg-white text-gray-600 hover:bg-violet-50 hover:text-violet-700': selectedCategory !== 'BottomWear'
+        }">
+        BottomWear
+      </button>
+  
+      <button (click)="setCategory('Shoes')" 
+        class="px-6 py-3 rounded-full text-sm text-white font-medium transition-all duration-300"
+        [ngClass]="{
+          'bg-gradient-to-r from-violet-600 to-indigo-600 text-white shadow-lg transform scale-105': selectedCategory === 'Shoes',
+          'bg-white text-gray-600 hover:bg-violet-50 hover:text-violet-700': selectedCategory !== 'Shoes'
+        }">
+        Shoes
+      </button>
+    </div>
+    </div> 
+  </div>
+
+
+  <main class="max-w-8xl mx-auto px-4 sm:px-6 g:px-8 pt-16 pb-16  ">
+
+    
+
+
+    
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Product Cards -->
+          <div *ngFor="let product of filteredProducts" 
+          class="group bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden">
+          <div class="relative overflow-hidden">
+            <img [src]="product.imageUrl" alt="{{ product.name }}" class="w-full h-72 object-cover  transform group-hover:scale-105 transition-transform
+            duration-500"/>
+
+            <button
+            class="absolute top-4 right-4 p-2 bg-white rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-600 hover:text-red-500 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+           </svg>
+          </button>
+          </div>
+
+          <div class="p-6">
+            <h3 class="text-xl text-black font-semibold mt-2">{{ product.name }}</h3>
+            <p class="text-gray-600 text-sm">{{ product.description }}</p>
+            <div class="flex items-center justify-between mt-4" >
+
+              <span class="text-2xl font-bold text-violet-700">₹{{product.price | number}}</span>
+         
+              <button
+              (click)="checkLogin(product)"
+              class="bg-violet-600 hover:bg-violet-700 text-white px-6 py-2 rounded-lg text-sm font-medium transform hover:scale-105 transition-all duration-200"
+            >
+              Add to Cart
+            </button>
+
+            </div>
+
+          </div>   
+        </div>
+      </div>
+  </main>
+    
+    
+    <!-- <app-header></app-header>-->
+
+    
+    <div *ngIf="showModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+      <div class="bg-white rounded-2xl p-8 max-w-md w-full mx-4 transform transition-all duration-300 scale-100">
+        <div class="text-center">
+          <div class="mb-6">
+            <div class="w-16 h-16 bg-gradient-to-r from-green-600 to-green-400 rounded-full flex items-center justify-center mx-auto">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+              </svg>
+            </div>
+          </div>
+          <h2 class="text-2xl font-bold text-green-600 mb-4">Yaaay!</h2>
+          <p class="text-gray-600 mb-8">
+            Your Item is Added To Cart. 
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <button
+              (click)="navigateToCart()"
+              class="px-6 py-3 bg-gradient-to-r from-violet-600 to-indigo-600 text-white rounded-lg font-medium hover:shadow-lg transform hover:scale-105 transition-all duration-300"
+            >
+              Go To Cart
+            </button>
+            <button
+              (click)="navigateToHome()"
+              class="px-6 py-3 bg-gray-100 text-gray-700 rounded-lg font-medium hover:bg-gray-200 transform hover:scale-105 transition-all duration-300"
+            >
+              Continue Shopping
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    
+    <!-- Products Section -->
+
+
+    
+    
+
+    
+    
+    
+</body>
+
+
+        
+      
+      
+  

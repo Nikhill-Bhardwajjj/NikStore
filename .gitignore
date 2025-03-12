@@ -1,0 +1,9 @@
+# Ignore node_modules and environment files
+node_modules/
+dist/
+.env
+
+# Ignore .NET build files
+bin/
+obj/
+appsettings.json

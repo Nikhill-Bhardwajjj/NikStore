@@ -1,0 +1,128 @@
+<div class="min-h-screen  bg-gradient-to-r from-violet-500 to-indigo-500 py-12 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-4xl mx-auto ">
+    <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+      <div class="px-8 pt-8">
+        <div class="text-center mb-8">
+          <div class="w-16 h-16 bg-gradient-to-r from-violet-600 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" viewBox="0 0 20 20" fill="currentColor">
+              <path fillRule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clipRule="evenodd" />
+            </svg>
+          </div>
+          <h2 class="text-2xl font-bold bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent">
+            Add New Product
+          </h2>
+          <p class="text-sm text-gray-500 mt-2">
+            Create a new product listing with detailed information
+          </p>
+        </div>
+
+        <form (ngSubmit)="addProduct()" class="space-y-6">
+          <!-- Product Name -->
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Product Name</label>
+            <input 
+              type="text" 
+              [(ngModel)]="product.name" 
+              name="name" 
+              required
+              placeholder="Enter product name"
+              class="mt-1 w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-all duration-200"
+            >
+          </div>
+
+          <!-- Price -->
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Price (₹)</label>
+            <input 
+              type="number" 
+              [(ngModel)]="product.price" 
+              name="price" 
+              required
+              placeholder="Enter price"
+              class="mt-1 w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-all duration-200"
+            >
+          </div>
+
+          <!-- Description -->
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Description</label>
+            <textarea 
+              [(ngModel)]="product.description" 
+              name="description" 
+              rows="4"
+              placeholder="Enter product description"
+              class="mt-1 w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-all duration-200"
+            ></textarea>
+          </div>
+
+          <!-- Image Upload -->
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Product Image</label>
+            <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-200 border-dashed rounded-lg hover:border-violet-400 transition-colors duration-200">
+              <div class="space-y-1 text-center">
+                <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48">
+                  <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+                <div class="flex text-sm text-gray-600">
+                  <label class="relative cursor-pointer bg-white rounded-md font-medium text-violet-600 hover:text-violet-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-violet-500">
+                    <span>Upload a file</span>
+                    <input 
+                      type="file" 
+                      (change)="onFileSelected($event)"
+                      class="sr-only"
+                    >
+                  </label>
+                  <p class="pl-1">or drag and drop</p>
+                </div>
+                <p class="text-xs text-gray-500">
+                  PNG, JPG, GIF up to 10MB
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stock -->
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Stock Quantity</label>
+            <input 
+              type="number" 
+              [(ngModel)]="product.stock" 
+              name="stock" 
+              required
+              placeholder="Enter stock quantity"
+              class="mt-1 w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-all duration-200"
+            >
+          </div>
+
+          <!-- Category -->
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Category ID</label>
+            <input 
+              type="number" 
+              [(ngModel)]="product.categoryId" 
+              name="categoryId" 
+              required
+              placeholder="Enter category ID"
+              class="mt-1 w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-all duration-200"
+            >
+          </div>
+
+          <!-- Submit Button -->
+          <button 
+            type="submit"
+            class="w-full bg-gradient-to-r from-violet-600 to-indigo-600 text-white py-3 rounded-lg font-medium hover:shadow-lg transform hover:scale-[1.02] transition-all duration-300"
+          >
+            Add Product
+          </button>
+        </form>
+      </div>
+
+      <!-- Decorative Bottom -->
+      <div class="mt-8">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+          <path fill="#8B5CF6" fill-opacity="0.2" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
