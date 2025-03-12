@@ -94,7 +94,7 @@ MyProject/
    ```sh
    dotnet run
    ```
-5. The API should be running on `http://localhost:5000` (or as configured).
+5. The API should be running on `http://localhost:5001` (or as configured).
 
 ### Frontend (Angular)
 1. Navigate to the `frontend/` folder:
@@ -116,7 +116,7 @@ MyProject/
 2. Update the connection string in `appsettings.json`:
    ```json
    "ConnectionStrings": {
-      "DefaultConnection": "Server=YOUR_SERVER;Database=YOUR_DB;User Id=YOUR_USER;Password=YOUR_PASSWORD;"
+      "Server=Your_SERVER; Database= YOUR_DB;Trusted_Connection = True;MultipleActiveResultSets =true;TrustServerCertificate=True"
    }
    ```
 3. Apply migrations (if applicable):
