@@ -29,11 +29,11 @@ NikStore is a full-stack **eCommerce web application** built using **Angular** f
 - Angular
 - TypeScript
 - HTML, CSS
-- Angular Material / Tailwind CSS (if applicable)
-- RxJS
+- Angular Material / Tailwind CSS 
+
 
 ### Backend (.NET API)
-- .NET Core / .NET 6+ 
+- .NET 8
 - Entity Framework Core
 - C#
 - SQL Server
@@ -94,7 +94,7 @@ MyProject/
    ```sh
    dotnet run
    ```
-5. The API should be running on `http://localhost:5001` (or as configured).
+5. The API should be running on `http://localhost:5001` .
 
 ### Frontend (Angular)
 1. Navigate to the `frontend/` folder:
@@ -119,9 +119,9 @@ MyProject/
       "Server=Your_SERVER; Database= YOUR_DB;Trusted_Connection = True;MultipleActiveResultSets =true;TrustServerCertificate=True"
    }
    ```
-3. Apply migrations (if applicable):
+3. Apply migrations :
    ```sh
-   dotnet ef database update
+   dotnet ef database update --project EcommerceWeb
    ```
 
 ## API Endpoints
