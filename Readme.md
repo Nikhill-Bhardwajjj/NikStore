@@ -5,12 +5,21 @@ NikStore is a full-stack **eCommerce web application** built using **Angular** f
 
 ## 📸 Screenshots
 
+### Login Page
+
+![Screenshot](https://raw.githubusercontent.com/Nikhill-Bhardwajjj/NikStore/main/images/Screenshot%202025-03-12%20105346.png)
+
+### Admin Page
+
+![Screenshot](https://raw.githubusercontent.com/Nikhill-Bhardwajjj/NikStore/main/images/Screenshot%202025-03-12%20111828.png)
+
+
 
 
 ## 🎥 Video Demo
 ![Video Demo](https://raw.githubusercontent.com/Nikhill-Bhardwajjj/NikStore/main/images/EcommerceWeb-GoogleChrome2025-03-1211-03-19-ezgif.com-video-to-gif-converter.gif)
 
-## 🎥 Video Demo
+
 ![Video Demo](https://raw.githubusercontent.com/Nikhill-Bhardwajjj/NikStore/main/images/EcommerceWeb-GoogleChrome2025-03-1211-14-31-ezgif.com-video-to-gif-converter.gif)
 
 
