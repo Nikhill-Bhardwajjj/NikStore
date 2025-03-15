@@ -1,7 +1,7 @@
 # 🚀 NikStore(Ecommerce Website)
 
 ## Overview
-NikStore is a full-stack **eCommerce web application** built using **Angular** for the frontend and **.NET API** for the backend. The application allows users to browse products, manage carts, place orders, and features role-based authentication with **JWT** for security.
+NikStore is a full-stack **E-Commerce web application** built using **Angular** for the frontend and **.NET API** for the backend. The application allows users to browse products, manage carts, place orders, and features role-based authentication with **JWT** for security.
 
 ## 📸 Screenshots
 
